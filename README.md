@@ -1,0 +1,6 @@
+Deployment of spring boot app on container with CI/CD process.
+a.	Run terraform script to launch total 2 nodes(ec2) on AWS - a Jenkins master node with only Jenkins installed and a Jenkins slave/agent node which has docker and maven installed, the set-ups to be pushed through user-data in terraform script, in both nodes pre-req is java for Jenkins to work.
+b.	Complete Jenkins installation and setup the slave node as Jenkins agent. Install the one and only plugin “docker pipeline” in Jenkins master. Also, setup docker credentials in Jenkins global credentials for further use in Jenkinsfile.
+c.	Create a GitHub repository with developer application source code (frontend, backend – Java app) uploaded and note the repository link. Create Dockerfile and Jenkinsfile in the same GitHub repo.
+d.	Create a pipeline job in Jenkins and run the job with the remote Jenkinsfile from our GitHub repo. Steps our Jenkinsfile will perform: a. clone project github repo, b. run maven test and maven install to create the jar file. c. build image out of the docker file, d. push a copy of the image to dockerHub registry, e. run container out of the build docker image.
+e.	With app deployed to prod access the app.
