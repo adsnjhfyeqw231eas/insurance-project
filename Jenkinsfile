@@ -4,7 +4,7 @@ node ('slave') {
     def dockerhubaccountid = 'tridevg'
     
     stage('clone repo') {
-        git 'https://github.com/adsnjhfyeqw231eas/star-agile-insurance-project.git'
+        git 'https://github.com/adsnjhfyeqw231eas/insurance-project.git'
     }
     stage('maven test') {
         sh 'mvn test'
